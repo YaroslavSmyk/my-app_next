@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { MainLayout } from '../components/MainLayout';
 
 export default function About(data: any) {
   const [ID, setId] = useState('');
@@ -12,29 +13,31 @@ export default function About(data: any) {
 
   return (
     <>
-      <h1>About</h1>
-      <Link href="/">`Hi`</Link>
-      <Link href="/task/1">
-        <p>
-          <button onClick={() => setId('1')}>1</button>
-        </p>
-      </Link>
-      <Link href="/task/2">
-        <p>
-          <button onClick={() => setId('2')}>2</button>
-        </p>
-      </Link>
-      <Link href="/task/3">
-        <p>
-          <button onClick={() => setId('3')}>3</button>
-        </p>
-      </Link>
-      <Link href="/task/4">
-        <p>
-          <button onClick={() => setId('4')}>4</button>
-        </p>
-      </Link>
-      {ID !== '' && <div>{JSON.stringify(post)}</div>}
+      <MainLayout title="About">
+        <h1>About</h1>
+        <Link href="/">`Hi`</Link>
+        <Link href="/task/1">
+          <p>
+            <button onClick={() => setId('1')}>1</button>
+          </p>
+        </Link>
+        <Link href="/task/2">
+          <p>
+            <button onClick={() => setId('2')}>2</button>
+          </p>
+        </Link>
+        <Link href="/task/3">
+          <p>
+            <button onClick={() => setId('3')}>3</button>
+          </p>
+        </Link>
+        <Link href="/task/4">
+          <p>
+            <button onClick={() => setId('4')}>4</button>
+          </p>
+        </Link>
+        {ID !== '' && <div>{JSON.stringify(post)}</div>}
+      </MainLayout>
     </>
   );
 }

@@ -7,7 +7,6 @@ export default function Task(data: any) {
   const router = useRouter();
   const [post, setPost] = useState('');
 
-  // const post = data.data.filter((post: any) => post.id === router.query.id);
   useEffect(() => {
     setPost(data.data.filter((post: any) => post.id === router.query.id));
   }, [data.data, router.query.id]);

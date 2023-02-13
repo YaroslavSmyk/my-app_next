@@ -1,57 +1,63 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { MainLayout } from '../components/MainLayout';
+import AppBar from '@mui/material/AppBar';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export default function About() {
-  // const [ID, setId] = useState('');
-  // const [post, setPost] = useState([]);
-  // useEffect(() => {
-  //   // let posts = JSON.stringify(data);
-
-  //   setPost(data.data.filter((post: any) => post.id === ID));
-  // }, [data.data, ID]);
-
   return (
     <>
       <MainLayout title="About">
-        <h1>About</h1>
-        <Link href="/">`Hi`</Link>
-        <Link href="/task/1">
-          <p>
-            <button>1</button>
-          </p>
-        </Link>
-        <Link href="/task/2">
-          <p>
-            <button>2</button>
-          </p>
-        </Link>
-        <Link href="/task/3">
-          <p>
-            <button>3</button>
-          </p>
-        </Link>
-        <Link href="/task/4">
-          <p>
-            <button>4</button>
-          </p>
-        </Link>
-        {/* {ID !== '' && <div>{JSON.stringify(post)}</div>} */}
+        <AppBar component="nav">
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', pl: 5 }}>
+            <Typography
+              textTransform="uppercase"
+              mr={8}
+              variant="h6"
+              sx={{ my: 2 }}
+            >
+              Next
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                pr: 5,
+              }}
+            >
+              <Box sx={{ display: 'flex' }}>
+                <Box  sx={{ pr: 1, display: 'flex', textTransform: "uppercase" }}>
+                  <p>About</p>
+                </Box>
+                <Box sx={{ pr: 1, display: 'flex', textTransform: "uppercase" }}>
+                  <Link href="/">Home</Link>
+                </Box>
+                <Box sx={{ pr: 1, display: 'flex' }}>
+                  <Link href="/task/1">
+                    1
+                  </Link>
+                </Box>
+                <Box sx={{ pr: 1, display: 'flex' }}>
+                  <Link href="/task/2">
+                    2
+                  </Link>
+                </Box>
+                <Box sx={{ pr: 1, display: 'flex' }}>
+                  <Link href="/task/3">
+                    3
+                  </Link>
+                </Box>
+                <Box sx={{ pr: 1, display: 'flex' }}>
+                  <Link href="/task/4">
+                    4
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </AppBar>
       </MainLayout>
     </>
   );
 }
-
-// export async function getServerSideProps() {
-//   const res = await fetch(
-//     'https://62840a40a48bd3c40b6a3c4f.mockapi.io/api/v1/tasks'
-//   );
-//   let data = await res.json();
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
-// const name = '1';

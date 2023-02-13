@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import router, { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { MainLayout } from '../../components/MainLayout';
 
@@ -8,7 +8,7 @@ export default function Task(data: any) {
   const [post, setPost] = useState('');
 
   useEffect(() => {
-    setPost(data.data.filter((post: any) => post.id === router.query.id));
+      setPost(data.data.filter((post: any) => post.id === router.query.id));
   }, [data.data, router.query.id]);
 
   let output: any;
@@ -24,7 +24,6 @@ export default function Task(data: any) {
   return (
     <MainLayout title={`task ${router.query.id}`}>
       <Link href="/about">About</Link>
-      {/* <h1>{`${router.query.id}`}</h1> */}
       <div>{output}</div>
     </MainLayout>
   );

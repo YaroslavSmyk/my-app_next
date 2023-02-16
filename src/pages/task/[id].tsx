@@ -1,19 +1,22 @@
 import Link from 'next/link';
-import router, { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
 import { MainLayout } from '../../components/MainLayout';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export default function Task(data: any) {
   const router = useRouter();
+
   const [post, setPost] = useState('');
 
   useEffect(() => {
-      setPost(data.data.filter((post: any) => post.id === router.query.id));
+    setPost(data.data.filter((post: any) => post.id === router.query.id));
   }, [data.data, router.query.id]);
 
   let output: any;
   if (!post) {
-    output = <h1>Loading...</h1>;
+    output = <h1>Loading</h1>;
   } else {
     output = (
       <>
@@ -21,11 +24,18 @@ export default function Task(data: any) {
       </>
     );
   }
+
   return (
-    <MainLayout title={`task ${router.query.id}`}>
-      <Link href="/about">About</Link>
-      <div>{output}</div>
-    </MainLayout>
+    <>
+      <MainLayout title='task'>
+        <Box mt={15}>
+          <Typography component={'span'} variant={'body2'} sx={{ my: 2 }}>
+            <p>ID {router.query.id}</p>
+            <div>{output}</div>
+          </Typography>
+        </Box>
+      </MainLayout>
+    </>
   );
 }
 
@@ -41,4 +51,3 @@ export async function getServerSideProps() {
     },
   };
 }
-const name = '1';

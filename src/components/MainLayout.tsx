@@ -34,7 +34,7 @@ export function MainLayout({ children, title = 'home' }: any) {
                 textTransform: 'uppercase',
               }}
             >
-              <Button sx={{ color: '#fff' }}>Hi</Button>
+              <div>Navigation &#8594;</div>
 
               <Box
                 sx={{

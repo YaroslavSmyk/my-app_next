@@ -3,14 +3,19 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#00ff00',
+      main: '#000fff',
     },
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          height: '100vh'
+          display: 'flex',
+          justifyContent: 'space-beetwen',
+          flexhDiraction: 'colum',
+          paddingTop: '80px',
+          height: '100vh',
+          alignItems: 'center',
         }
       }
     }

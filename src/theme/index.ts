@@ -11,11 +11,11 @@ export const theme = createTheme({
       styleOverrides: {
         body: {
           display: 'flex',
-          justifyContent: 'space-beetwen',
-          flexhDiraction: 'colum',
+          justifyContent: 'space-between',
+          backgroundColor: '#e9e9e9',
+          flexDirection: 'colom',
           paddingTop: '80px',
           height: '100vh',
-          alignItems: 'center',
         }
       }
     }
